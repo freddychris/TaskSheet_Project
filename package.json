@@ -1,0 +1,20 @@
+{
+  "name": "timesheet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "fastify": "^3.9.1",
+    "pg": "^8.5.1",
+    "sequelize": "^6.3.5"
+  }
+}
