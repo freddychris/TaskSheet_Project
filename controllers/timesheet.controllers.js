@@ -1,4 +1,5 @@
-const TimesheetServices = require('../services/timesheet.services')
+const TimesheetServices = require('../services/timesheet.services');
+const { paginatorResult } = require('../lib/paginatorResult');
 
 const create = (req, res)=>{
     return TimesheetServices.create(req.body).then((result)=>{
@@ -9,8 +10,10 @@ const create = (req, res)=>{
     })
 }
 const list = (req, res)=>{
-    return TimesheetServices.list().then((result)=>{
-        res.send(result)
+    // TimesheetServices.filterAndPaginate({ ...req.query })
+    return TimesheetServices.list({ ...req.query }).then((result)=>{
+        const timesheets = paginatorResult(result, 'timesheets');
+        res.send(timesheets);
     }).catch((error)=>{
         console.log('errror is', error);
         res.send(error)
