@@ -1,7 +1,4 @@
 const timesheetController = require('../controllers/timesheet.controllers.js');
-
-
-
 function timesheets(fastify, opts, next) {
     fastify.post('/timesheets', timesheetController.create);
     fastify.get('/timesheets', timesheetController.list);
@@ -10,6 +7,4 @@ function timesheets(fastify, opts, next) {
     fastify.delete('/timesheets/:timesheets_id/destroy', timesheetController.destroy );
    next()
 }
-
-
 module.exports = timesheets;

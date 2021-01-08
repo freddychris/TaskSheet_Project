@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
                 validate: {
                     isAlpha: {
                         args: true,
-                        msg: 'Name should be Alphabeth'
+                        msg: 'Name should be Alphabet'
                     },
                     isName(value, next) {
                         if (name.includes(value)) {
@@ -43,6 +43,7 @@ module.exports = (sequelize, DataTypes) => {
             choose_project: {
                 allowNull: { args: false, msg: 'Enter the Name' },
                 type: DataTypes.STRING,
+                validate : {
                 ischoose_project(value, next) {
                     if (choose_project.includes(value)) {
                         return next();
@@ -50,16 +51,19 @@ module.exports = (sequelize, DataTypes) => {
                         return next('Invalid Project Name');
                     }
                 }
+            }
         },
         choose_project_phase: {
             allowNull: { args: false, msg: 'Enter the Name' },
             type: DataTypes.STRING,
+            validate : {
             ischoose_project_phase(value, next) {
                 if (choose_project_phase.includes(value)) {
                     return next();
                 } else {
                     return next('Invalid Project Phase');
                 }
+             }
         }
     },
         task_worked_on: {
@@ -68,7 +72,10 @@ module.exports = (sequelize, DataTypes) => {
     },
         number_of_hours: {
         allowNull: { args: false, msg: 'Enter the Name' },
-        type: DataTypes.TIME
+        type: DataTypes.TIME,
+        validate: {
+
+        }
     },
         any_comments: {
         type: DataTypes.STRING
