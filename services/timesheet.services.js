@@ -46,18 +46,13 @@ function update(id, attributes) {
         where: {
             id: id
         },
-    }).then((Timesheet) => {
-        return Timesheet;
     })
 }
-
 function destroy(TimesheetId) {
     return Timesheet.destroy({
         where: {
             id: TimesheetId
         }
-    }).then((Timesheet) => {
-        return Timesheet;
     })
 }
 

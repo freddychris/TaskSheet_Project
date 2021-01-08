@@ -29,19 +29,13 @@ module.exports = (sequelize, DataTypes) => {
                 }
             },
             work_from: {
-                allowNull: { args: false, msg: 'Enter the Name' },
+                allowNull: { args: false, msg: 'Please enter the work From details' },
                 type: DataTypes.ENUM({
                     values: ['Office', 'Home', 'Leave']
-                }),
-                validate: {
-                    isAlpha: {
-                        args: true,
-                        msg: 'Please enter Alphabet letters'
-                    },
-                }
+                })
             },
             choose_project: {
-                allowNull: { args: false, msg: 'Enter the Name' },
+                allowNull: { args: false, msg: 'Plesase enter the project name ' },
                 type: DataTypes.STRING,
                 validate : {
                 ischoose_project(value, next) {
@@ -54,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         choose_project_phase: {
-            allowNull: { args: false, msg: 'Enter the Name' },
+            allowNull: { args: false, msg: 'Please enter the choose project phase' },
             type: DataTypes.STRING,
             validate : {
             ischoose_project_phase(value, next) {
@@ -67,11 +61,11 @@ module.exports = (sequelize, DataTypes) => {
         }
     },
         task_worked_on: {
-        allowNull: { args: false, msg: 'Enter the Name' },
+        allowNull: { args: false, msg: 'Enter the Task Name' },
         type: DataTypes.STRING
     },
         number_of_hours: {
-        allowNull: { args: false, msg: 'Enter the Name' },
+        allowNull: { args: false, msg: 'Please enter Time by Hours:Minitus:Seconds' },
         type: DataTypes.TIME,
         validate: {
 
